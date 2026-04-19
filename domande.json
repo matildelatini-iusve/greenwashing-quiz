@@ -1,0 +1,163 @@
+{
+  "titolo": "Conosci il Greenwashing?",
+  "descrizione": "Un questionario per scoprire quanto sai riconoscere le pratiche di greenwashing delle aziende.",
+  "punteggio_massimo": 100,
+  "range_feedback": [
+    {
+      "min": 0,
+      "max": 20,
+      "titolo": "Principiante ambientale",
+      "commento": "Hai ancora molta strada da fare! Il greenwashing è ovunque e saper riconoscerlo è fondamentale per fare scelte di consumo consapevoli. Ti invitiamo a informarti di più sull'argomento."
+    },
+    {
+      "min": 21,
+      "max": 50,
+      "titolo": "Consumatore in formazione",
+      "commento": "Stai iniziando a capire come funziona il greenwashing, ma ci sono ancora molti inganni che potresti non riconoscere. Continua a informarti e a fare domande critiche sui prodotti che acquisti."
+    },
+    {
+      "min": 51,
+      "max": 80,
+      "titolo": "Consumatore consapevole",
+      "commento": "Ottimo! Hai una buona comprensione del greenwashing e sai riconoscere molte delle sue forme. Continua così e condividi queste conoscenze con chi ti sta intorno."
+    },
+    {
+      "min": 81,
+      "max": 100,
+      "titolo": "Esperto anti-greenwashing",
+      "commento": "Eccellente! Hai una conoscenza approfondita del greenwashing e sai riconoscerne le tecniche. Sei un consumatore critico e responsabile: il pianeta ha bisogno di persone come te!"
+    }
+  ],
+  "domande": [
+    {
+      "id": 1,
+      "domanda": "Un'azienda lancia una linea di prodotti con l'etichetta 'Eco-Friendly'. Quale informazione dovresti cercare per verificare questa affermazione?",
+      "risposte": [
+        "A. Basta che il packaging sia verde e riciclato",
+        "B. Una certificazione ambientale indipendente e verificabile (es. FSC, Ecolabel EU)",
+        "C. Che l'azienda abbia un reparto dedicato alla sostenibilità",
+        "D. Che il prodotto sia venduto in un negozio biologico"
+      ],
+      "risposta_corretta": "B",
+      "feedback": "Un'etichetta 'Eco-Friendly' senza prove è un classico esempio di greenwashing. Solo le certificazioni rilasciate da enti terzi e indipendenti (come Ecolabel EU, FSC, Blauer Engel) garantiscono standard verificabili. Il colore del packaging, il reparto aziendale o il punto vendita non sono prove di sostenibilità reale.",
+      "punteggio": 10
+    },
+    {
+      "id": 2,
+      "domanda": "Un'azienda petrolifera pubblica una campagna pubblicitaria in cui mostra il suo investimento nelle energie rinnovabili, pari al 2% del suo fatturato annuo. Cosa rappresenta questo?",
+      "risposte": [
+        "A. Un segnale positivo: ogni piccolo passo verso la sostenibilità conta",
+        "B. Un esempio di greenwashing: l'azienda distrae l'attenzione dal suo impatto principale con iniziative marginali",
+        "C. Una pratica obbligatoria per legge per le aziende inquinanti",
+        "D. Una strategia efficace di transizione energetica"
+      ],
+      "risposta_corretta": "B",
+      "feedback": "Questo è un classico caso di greenwashing per 'distrazione'. Quando un'azienda il cui core business è altamente inquinante pubblicizza investimenti verdi trascurabili rispetto ai suoi profitti complessivi, crea una falsa immagine ecologica senza cambiare realmente il proprio impatto ambientale. Bisogna sempre guardare i numeri nel contesto globale dell'azienda.",
+      "punteggio": 10
+    },
+    {
+      "id": 3,
+      "domanda": "Quale delle seguenti affermazioni è un segnale di greenwashing?",
+      "risposte": [
+        "A. 'Il nostro prodotto è certificato Carbon Neutral dall'ente XYZ, consulta il report completo sul nostro sito'",
+        "B. 'Naturale al 100%' senza ulteriori specifiche o certificazioni",
+        "C. 'Riduciamo le emissioni di CO2 del 40% entro il 2030, come da piano approvato dalla Science Based Targets initiative'",
+        "D. 'Il nostro packaging è realizzato con plastica riciclata certificata al 80%'"
+      ],
+      "risposta_corretta": "B",
+      "feedback": "L'affermazione 'Naturale al 100%' è vaga e non verificabile: molte sostanze naturali possono essere dannose, e il termine non ha una definizione legale standardizzata. Le altre opzioni forniscono dati concreti, riferimenti a enti certificatori o obiettivi misurabili, che sono caratteristiche di una comunicazione ambientale trasparente.",
+      "punteggio": 10
+    },
+    {
+      "id": 4,
+      "domanda": "Un brand di moda lancia una 'Collezione Sostenibile' composta dal 2% dei capi del suo catalogo totale, continuando a produrre milioni di capi con pratiche standard. Come si chiama questa pratica?",
+      "risposte": [
+        "A. Fast fashion responsabile",
+        "B. Transizione sostenibile graduale",
+        "C. Greenwashing per tokenismo",
+        "D. Economia circolare applicata"
+      ],
+      "risposta_corretta": "C",
+      "feedback": "Questo è il greenwashing da tokenismo: lanciare una piccola linea 'verde' per migliorare l'immagine del brand senza affrontare i problemi strutturali del proprio modello di business. La collezione sostenibile diventa uno strumento di marketing, non un reale cambiamento. Per valutare l'impegno di un'azienda, bisogna guardare cosa fa per il 98% restante della produzione.",
+      "punteggio": 10
+    },
+    {
+      "id": 5,
+      "domanda": "Cosa significa il termine 'Carbon Neutral' quando usato da un'azienda?",
+      "risposte": [
+        "A. L'azienda non produce assolutamente nessuna emissione di CO2",
+        "B. L'azienda ha eliminato del tutto l'uso di combustibili fossili",
+        "C. Le emissioni dell'azienda sono bilanciate da compensazioni (es. piantare alberi) ma non necessariamente ridotte",
+        "D. Il prodotto è privo di sostanze chimiche inquinanti"
+      ],
+      "risposta_corretta": "C",
+      "feedback": "Carbon Neutral non significa zero emissioni! Spesso le aziende acquistano 'crediti di carbonio' (carbon offset) per compensare le emissioni senza ridurle alla fonte. Questo approccio è criticato perché non affronta il problema reale e i progetti di offset hanno spesso efficacia discutibile. La vera soluzione è la riduzione delle emissioni, non solo la loro compensazione.",
+      "punteggio": 10
+    },
+    {
+      "id": 6,
+      "domanda": "Un'azienda di cosmetici promuove i suoi prodotti come 'cruelty-free' ma li vende in Cina, dove la legge impone test su animali per i cosmetici importati. Che tipo di problema è questo?",
+      "risposte": [
+        "A. Un problema burocratico che non riguarda l'azienda",
+        "B. Una contraddizione che configura greenwashing o comunicazione ingannevole",
+        "C. Un'eccezione accettabile per accedere a mercati importanti",
+        "D. Una pratica comune nel settore cosmetico internazionale"
+      ],
+      "risposta_corretta": "B",
+      "feedback": "Questa è una contraddizione diretta tra la comunicazione dell'azienda e le sue pratiche reali. Un'azienda che si dichiara 'cruelty-free' ma opera in mercati dove i test su animali sono obbligatori sta facendo una dichiarazione ingannevole. I consumatori consapevoli dovrebbero verificare se i brand che scelgono vendono anche in mercati con normative diverse.",
+      "punteggio": 10
+    },
+    {
+      "id": 7,
+      "domanda": "Quale delle seguenti certificazioni ambientali è riconosciuta a livello europeo come affidabile e indipendente?",
+      "risposte": [
+        "A. Il logo verde creato internamente dall'azienda",
+        "B. Un'etichetta con su scritto 'Approvato dal nostro team ambientale'",
+        "C. Ecolabel EU (la margherita europea)",
+        "D. La scritta 'Green' sul packaging del prodotto"
+      ],
+      "risposta_corretta": "C",
+      "feedback": "L'Ecolabel EU (il fiore stilizzato con stelle europee) è l'unica etichetta ecologica ufficiale dell'Unione Europea. Viene assegnata da enti certificatori indipendenti dopo verifiche rigorose su tutto il ciclo di vita del prodotto. Le auto-dichiarazioni aziendali o le etichette inventate dall'azienda stessa non offrono alcuna garanzia di indipendenza o veridicità.",
+      "punteggio": 10
+    },
+    {
+      "id": 8,
+      "domanda": "Un supermercato installa pannelli solari sul tetto del suo magazzino e li usa per comunicare di essere 'un'azienda green'. Nel frattempo, genera migliaia di tonnellate di rifiuti alimentari e plastici ogni anno. Questo è un esempio di:",
+      "risposte": [
+        "A. Responsabilità ambientale aziendale",
+        "B. Greenwashing: si evidenzia un'azione positiva minore per mascherare impatti negativi molto maggiori",
+        "C. Una corretta strategia di comunicazione CSR",
+        "D. Un primo passo verso la sostenibilità completa"
+      ],
+      "risposta_corretta": "B",
+      "feedback": "Questo esempio illustra il principio del 'trade-off nascosto': un'azienda enfatizza un'azione positiva (pannelli solari) per distogliere l'attenzione da problemi ambientali molto più gravi (rifiuti alimentari e plastici). La sostenibilità reale richiede un approccio olistico, non la comunicazione selettiva dei soli aspetti positivi.",
+      "punteggio": 10
+    },
+    {
+      "id": 9,
+      "domanda": "Cos'è la 'Green Taxonomy' europea e perché è importante contro il greenwashing?",
+      "risposte": [
+        "A. Un registro di tutte le aziende che fanno greenwashing in Europa",
+        "B. Un sistema di classificazione UE che definisce quali attività economiche sono davvero sostenibili",
+        "C. Una tassa europea sulle aziende inquinanti",
+        "D. Un programma di sussidi per le aziende che adottano pratiche green"
+      ],
+      "risposta_corretta": "B",
+      "feedback": "La Tassonomia Verde dell'UE è un sistema di classificazione che stabilisce criteri scientifici per determinare se un'attività economica è davvero sostenibile. Aiuta investitori e consumatori a distinguere gli investimenti e i prodotti veramente sostenibili da quelli che si limitano a usare il marketing green. È uno strumento fondamentale della strategia europea contro il greenwashing finanziario.",
+      "punteggio": 10
+    },
+    {
+      "id": 10,
+      "domanda": "Quale domanda è più utile porsi prima di acquistare un prodotto con claim ambientali?",
+      "risposte": [
+        "A. Il packaging è riciclabile?",
+        "B. L'azienda ha un CEO che parla di sostenibilità?",
+        "C. Questa affermazione è verificata da un ente terzo indipendente? Quali dati la supportano?",
+        "D. Il prodotto è venduto online o in negozio fisico?"
+      ],
+      "risposta_corretta": "C",
+      "feedback": "La domanda chiave è sempre: chi verifica questa affermazione e con quali dati? Le certificazioni di terze parti indipendenti, i report di sostenibilità auditati e i dati trasparenti sono gli strumenti per distinguere il greenwashing dalla sostenibilità reale. Il packaging riciclabile è solo un piccolo aspetto, mentre le dichiarazioni del CEO senza supporto dati non hanno valore oggettivo.",
+      "punteggio": 10
+    }
+  ]
+}

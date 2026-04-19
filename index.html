@@ -1,11 +1,647 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conosci il Greenwashing?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ccd5ae;
+      --bg-card: #d8debc;
+      --bg-card2: #e3e8cc;
+      --text: #2d3a1b;
+      --text-muted: #4a5a2e;
+      --btn: #334f0f;
+      --btn-text: #ffffff;
+      --correct: #2d6a2a;
+      --correct-bg: #d4edda;
+      --wrong: #8b2c2c;
+      --wrong-bg: #f5d5d5;
+      --border: rgba(45,58,27,0.2);
+    }
+
+    body {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: var(--btn);
+      color: var(--btn-text);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 1.2rem;
+    }
+
+    .header h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .header h1 span {
+      color: var(--btn);
+    }
+
+    .header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* ── PROGRESS ── */
+    .progress-wrap {
+      margin-bottom: 2rem;
+      animation: fadeDown 0.6s 0.1s ease both;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: rgba(45,58,27,0.15);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--btn);
+      border-radius: 100px;
+      transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.45s ease both;
+    }
+
+    .question-number {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--btn);
+      margin-bottom: 0.75rem;
+    }
+
+    .question-text {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text);
+      margin-bottom: 1.6rem;
+    }
+
+    /* ── OPTIONS ── */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: var(--bg-card2);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      cursor: pointer;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 0.97rem;
+      color: var(--text);
+      text-align: left;
+      transition: border-color 0.18s, background 0.18s, transform 0.12s;
+      line-height: 1.45;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--btn);
+      background: rgba(51,79,15,0.08);
+      transform: translateX(3px);
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+    }
+
+    .option-letter {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(45,58,27,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      transition: background 0.18s, color 0.18s;
+    }
+
+    .option-btn.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+    }
+
+    .option-btn.correct .option-letter {
+      background: var(--correct);
+      color: #fff;
+    }
+
+    .option-btn.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+    }
+
+    .option-btn.wrong .option-letter {
+      background: var(--wrong);
+      color: #fff;
+    }
+
+    /* ── FEEDBACK ── */
+    .feedback-box {
+      margin-top: 1.4rem;
+      padding: 1.1rem 1.3rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      border-left: 4px solid transparent;
+      animation: fadeUp 0.35s ease both;
+    }
+
+    .feedback-box.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: #1a4a18;
+    }
+
+    .feedback-box.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: #5a1a1a;
+    }
+
+    .feedback-title {
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── SCORE STRIP ── */
+    .score-strip {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--btn);
+      color: var(--btn-text);
+      border-radius: 12px;
+      padding: 0.75rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .score-strip strong {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--btn);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 10px;
+      padding: 0.8rem 1.8rem;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.12s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-primary:active { transform: scale(0.97); }
+
+    .btn-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+
+    /* ── RESULTS ── */
+    .results-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2.2rem;
+      text-align: center;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .results-emoji {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .results-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .results-level {
+      display: inline-block;
+      background: var(--btn);
+      color: var(--btn-text);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 1.2rem;
+    }
+
+    .results-score-big {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--btn);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .results-score-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .results-comment {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+    .results-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .btn-restart {
+      background: transparent;
+      color: var(--btn);
+      border: 2px solid var(--btn);
+      border-radius: 10px;
+      padding: 0.75rem 1.8rem;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-restart:hover {
+      background: var(--btn);
+      color: var(--btn-text);
+    }
+
+    /* ── INTRO ── */
+    .intro-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.2rem;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.45s ease both;
+    }
+
+    .intro-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(51,79,15,0.1);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── HIDDEN ── */
+    .hidden { display: none !important; }
+  </style>
 </head>
 <body>
-    Ciao a tutti
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-badge">Progetto universitario · Sensibilizzazione</div>
+    <h1>Conosci il<br><span>Greenwashing?</span></h1>
+    <p>Scopri quanto sei capace di riconoscere le pratiche ingannevoli delle aziende che si fingono sostenibili.</p>
+  </div>
+
+  <!-- INTRO VIEW -->
+  <div id="intro-view">
+    <div class="intro-card">
+      <p style="font-size:1.05rem; line-height:1.7; color:var(--text-muted);">
+        Il <strong style="color:var(--text);">greenwashing</strong> è la pratica con cui aziende e organizzazioni si promuovono come ecologiche o sostenibili senza che le loro azioni concrete lo dimostrino realmente. È un fenomeno sempre più diffuso che inganna i consumatori e ostacola la vera transizione ambientale.
+      </p>
+      <div class="intro-meta">
+        <div class="meta-chip">🌿 <span id="num-domande">–</span> domande</div>
+        <div class="meta-chip">⏱ Circa 5 minuti</div>
+        <div class="meta-chip">🏆 <span id="punteggio-max">–</span> punti totali</div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="startQuiz()">Inizia il questionario →</button>
+    </div>
+  </div>
+
+  <!-- QUIZ VIEW -->
+  <div id="quiz-view" class="hidden">
+    <div class="progress-wrap">
+      <div class="progress-info">
+        <span id="progress-label">Domanda 1 di 10</span>
+        <span id="score-label">Punteggio: 0</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="card" id="question-card">
+      <div class="question-number" id="q-number">Domanda 1</div>
+      <div class="question-text" id="q-text"></div>
+      <div class="options" id="options-container"></div>
+      <div class="feedback-box hidden" id="feedback-box">
+        <div class="feedback-title" id="feedback-title"></div>
+        <div id="feedback-text"></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary hidden" id="next-btn" onclick="nextQuestion()">Prossima domanda →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS VIEW -->
+  <div id="results-view" class="hidden">
+    <div class="results-card">
+      <span class="results-emoji" id="results-emoji"></span>
+      <div class="results-level" id="results-level"></div>
+      <div class="results-title" id="results-title"></div>
+      <div class="results-score-big" id="results-score"></div>
+      <div class="results-score-label">punti su <span id="results-max"></span></div>
+      <div class="results-stats">
+        <div class="stat">
+          <div class="stat-num" id="stat-correct"></div>
+          <div class="stat-label">Risposte corrette</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="stat-wrong"></div>
+          <div class="stat-label">Risposte errate</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="stat-pct"></div>
+          <div class="stat-label">Percentuale</div>
+        </div>
+      </div>
+      <div class="results-comment" id="results-comment"></div>
+      <button class="btn-restart" onclick="restart()">↺ Rifai il questionario</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let dati = null;
+  let domanda_corrente = 0;
+  let punteggio = 0;
+  let risposte_corrette = 0;
+  let risposto = false;
+
+  const emojis_range = ['😟','🤔','🌱','🌟'];
+
+  async function caricaDati() {
+    const response = await fetch('domande.json');
+    dati = await response.json();
+    document.getElementById('num-domande').textContent = dati.domande.length;
+    document.getElementById('punteggio-max').textContent = dati.punteggio_massimo;
+  }
+
+  function startQuiz() {
+    document.getElementById('intro-view').classList.add('hidden');
+    document.getElementById('quiz-view').classList.remove('hidden');
+    mostraDomanda();
+  }
+
+  function mostraDomanda() {
+    risposto = false;
+    const d = dati.domande[domanda_corrente];
+    const tot = dati.domande.length;
+
+    document.getElementById('q-number').textContent = `Domanda ${domanda_corrente + 1}`;
+    document.getElementById('q-text').textContent = d.domanda;
+    document.getElementById('progress-label').textContent = `Domanda ${domanda_corrente + 1} di ${tot}`;
+    document.getElementById('score-label').textContent = `Punteggio: ${punteggio}`;
+    document.getElementById('progress-fill').style.width = `${(domanda_corrente / tot) * 100}%`;
+
+    const container = document.getElementById('options-container');
+    container.innerHTML = '';
+
+    d.risposte.forEach((r, i) => {
+      const lettera = r.charAt(0);
+      const testo = r.substring(3);
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerHTML = `<span class="option-letter">${lettera}</span><span>${testo}</span>`;
+      btn.onclick = () => rispondi(lettera, btn);
+      container.appendChild(btn);
+    });
+
+    document.getElementById('feedback-box').classList.add('hidden');
+    document.getElementById('next-btn').classList.add('hidden');
+
+    // reset animation
+    const card = document.getElementById('question-card');
+    card.style.animation = 'none';
+    card.offsetHeight;
+    card.style.animation = '';
+  }
+
+  function rispondi(lettera, btnCliccato) {
+    if (risposto) return;
+    risposto = true;
+
+    const d = dati.domande[domanda_corrente];
+    const corretta = d.risposta_corretta;
+    const isCorretta = lettera === corretta;
+
+    const buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach(btn => {
+      btn.disabled = true;
+      const l = btn.querySelector('.option-letter').textContent;
+      if (l === corretta) btn.classList.add('correct');
+      else if (l === lettera && !isCorretta) btn.classList.add('wrong');
+    });
+
+    if (isCorretta) {
+      punteggio += d.punteggio;
+      risposte_corrette++;
+    }
+
+    const fb = document.getElementById('feedback-box');
+    const fbTitle = document.getElementById('feedback-title');
+    const fbText = document.getElementById('feedback-text');
+
+    fb.classList.remove('hidden', 'correct', 'wrong');
+    fb.classList.add(isCorretta ? 'correct' : 'wrong');
+    fbTitle.textContent = isCorretta ? '✓ Risposta corretta!' : '✗ Risposta errata';
+    fbText.textContent = d.feedback;
+
+    document.getElementById('score-label').textContent = `Punteggio: ${punteggio}`;
+    document.getElementById('next-btn').classList.remove('hidden');
+
+    const isUltima = domanda_corrente === dati.domande.length - 1;
+    document.getElementById('next-btn').textContent = isUltima ? 'Vedi i risultati →' : 'Prossima domanda →';
+  }
+
+  function nextQuestion() {
+    domanda_corrente++;
+    if (domanda_corrente >= dati.domande.length) {
+      mostraRisultati();
+    } else {
+      mostraDomanda();
+    }
+  }
+
+  function mostraRisultati() {
+    document.getElementById('quiz-view').classList.add('hidden');
+    const rv = document.getElementById('results-view');
+    rv.classList.remove('hidden');
+
+    const tot = dati.domande.length;
+    const max = dati.punteggio_massimo;
+    const pct = Math.round((punteggio / max) * 100);
+    const errate = tot - risposte_corrette;
+
+    const range = dati.range_feedback.find(r => punteggio >= r.min && punteggio <= r.max);
+    const emojiIdx = dati.range_feedback.indexOf(range);
+
+    document.getElementById('results-emoji').textContent = emojis_range[emojiIdx] || '🌿';
+    document.getElementById('results-level').textContent = range ? range.titolo : '';
+    document.getElementById('results-title').textContent = range ? range.titolo : '';
+    document.getElementById('results-score').textContent = punteggio;
+    document.getElementById('results-max').textContent = max;
+    document.getElementById('results-comment').textContent = range ? range.commento : '';
+    document.getElementById('stat-correct').textContent = risposte_corrette;
+    document.getElementById('stat-wrong').textContent = errate;
+    document.getElementById('stat-pct').textContent = pct + '%';
+  }
+
+  function restart() {
+    domanda_corrente = 0;
+    punteggio = 0;
+    risposte_corrette = 0;
+    risposto = false;
+    document.getElementById('results-view').classList.add('hidden');
+    document.getElementById('quiz-view').classList.remove('hidden');
+    mostraDomanda();
+  }
+
+  caricaDati();
+</script>
+
 </body>
 </html>
