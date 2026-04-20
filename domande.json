@@ -33,10 +33,9 @@
       "id": 1,
       "domanda": "Un'azienda petrolifera pubblica una campagna pubblicitaria in cui mostra il suo investimento nelle energie rinnovabili, pari al 2% del suo fatturato annuo. Cosa rappresenta questo?",
       "risposte": [
-        "A. Un segnale positivo: ogni piccolo passo verso la sostenibilità conta",
-        "B. Un esempio di greenwashing: l'azienda distrae l'attenzione dal suo impatto principale con iniziative marginali",
-        "C. Una pratica obbligatoria per legge per le aziende inquinanti",
-        "D. Una strategia efficace di transizione energetica"
+        "A. Un segnale positivo: ogni piccolo passo verso la sostenibilità conta.",
+        "B. Un esempio di greenwashing: l'azienda distrae l'attenzione dal suo impatto principale con iniziative marginali.",
+        "C. Una pratica obbligatoria per legge per le aziende inquinanti."
       ],
       "risposta_corretta": "B",
       "feedback": "Questo è un classico caso di greenwashing per 'distrazione'. Quando un'azienda il cui core business è altamente inquinante pubblicizza investimenti verdi trascurabili rispetto ai suoi profitti complessivi, crea una falsa immagine ecologica senza cambiare realmente il proprio impatto ambientale. Bisogna sempre guardare i numeri nel contesto globale dell'azienda.",
@@ -46,11 +45,11 @@
       "id": 2,
       "domanda": "Perché le aziende amano così tanto i disegni di foglie, fiori e foreste sul packaging?",
       "risposte": [
-        "A. Perché creano un 'effetto alone' che inganna il nostro cervello facendoci abbassare le difese critiche.",
-        "B. Perché il grafico ha vinto un concorso di disegno botanico.",
+        "A. Perché il grafico ha vinto un concorso di disegno botanico.",
+        "B. Perché creano un 'effetto alone' che inganna il nostro cervello facendoci abbassare le difese critiche.",
         "C. Perché così i prodotti sono più difficili da trovare per i predatori nel bosco."
       ],
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "feedback": "Questo è un classico caso di greenwashing per 'distrazione'. Quando un'azienda il cui core business è altamente inquinante pubblicizza investimenti verdi trascurabili rispetto ai suoi profitti complessivi, crea una falsa immagine ecologica senza cambiare realmente il proprio impatto ambientale. Bisogna sempre guardare i numeri nel contesto globale dell'azienda.",
       "punteggio": 10
     },
@@ -59,10 +58,10 @@
       "domanda": "Perché l'affermazione '100% Naturale' è considerata tra le più ingannevoli nel marketing?",
       "risposte": [
         "A. Perché la natura non può essere posseduta dalle aziende.",
-        "B. Perché 'naturale' non è un termine regolamentato e non garantisce che il prodotto sia ecologico, etico o sicuro (anche l'arsenico è naturale).",
-        "C. Perché induce il consumatore a pensare che il prodotto sia commestibile."
+        "B. Perché induce il consumatore a pensare che il prodotto sia commestibile.",
+        "C. Perché 'naturale' non è un termine regolamentato e non garantisce che il prodotto sia ecologico, etico o sicuro (anche l'arsenico è naturale)."
       ],
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "feedback": "'Naturale' non è un termine regolamentato. Non significa né ecologico, né sano, né etico.",
       "punteggio": 10
     },
@@ -84,8 +83,7 @@
       "risposte": [
         "A. L'azienda non produce assolutamente nessuna emissione di CO2.",
         "B. L'azienda ha eliminato del tutto l'uso di combustibili fossili.",
-        "C. Le emissioni dell'azienda sono bilanciate da compensazioni (es. piantare alberi) ma non necessariamente ridotte.",
-        "D. Il prodotto è privo di sostanze chimiche inquinanti."
+        "C. Le emissioni dell'azienda sono bilanciate da compensazioni (es. piantare alberi) ma non necessariamente ridotte."
       ],
       "risposta_corretta": "C",
       "feedback": "Carbon Neutral non significa zero emissioni! Spesso le aziende acquistano 'crediti di carbonio' (carbon offset) per compensare le emissioni senza ridurle alla fonte. Questo approccio è criticato perché non affronta il problema reale e i progetti di offset hanno spesso efficacia discutibile. La vera soluzione è la riduzione delle emissioni, non solo la loro compensazione.",
@@ -97,8 +95,7 @@
       "risposte": [
         "A. Un problema burocratico che non riguarda l'azienda.",
         "B. Una contraddizione che configura greenwashing o comunicazione ingannevole.",
-        "C. Un'eccezione accettabile per accedere a mercati importanti.",
-        "D. Una pratica comune nel settore cosmetico internazionale."
+        "C. Un'eccezione accettabile per accedere a mercati importanti."
       ],
       "risposta_corretta": "B",
       "feedback": "Questa è una contraddizione diretta tra la comunicazione dell'azienda e le sue pratiche reali. Un'azienda che si dichiara 'cruelty-free' ma opera in mercati dove i test su animali sono obbligatori sta facendo una dichiarazione ingannevole. I consumatori consapevoli dovrebbero verificare se i brand che scelgono vendono anche in mercati con normative diverse.",
@@ -120,11 +117,11 @@
       "id": 8,
       "domanda": "Un'azienda alimentare dichiara 'Km 0' ma i suoi camion girano tutta la regione per consegnare a ogni singolo bar. Dove sta l'inghippo?",
       "risposte": [
-        "A. Nell'impatto logistico: la distribuzione inefficiente inquina più della distanza percorsa.",
-        "B. Nel fatto che i chilometri sono misurati in linea d'aria dai piccioni viaggiatori.",
-        "C. Nessun inghippo, il chilometro zero è sempre la scelta perfetta."
+        "A. Nel fatto che i chilometri sono misurati in linea d'aria dai piccioni viaggiatori.",
+        "B. Nessun inghippo, il chilometro zero è sempre la scelta perfetta.",
+        "C. Nell'impatto logistico: la distribuzione inefficiente inquina più della distanza percorsa."
       ],
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "feedback": "Sostenibilità significa guardare l'efficienza dell'intero processo, non solo il punto di partenza.",
       "punteggio": 10
     },
@@ -134,8 +131,7 @@
       "risposte": [
         "A. Un registro di tutte le aziende che fanno greenwashing in Europa.",
         "B. Un sistema di classificazione UE che definisce quali attività economiche sono davvero sostenibili.",
-        "C. Una tassa europea sulle aziende inquinanti.",
-        "D. Un programma di sussidi per le aziende che adottano pratiche green."
+        "C. Una tassa europea sulle aziende inquinanti."
       ],
       "risposta_corretta": "B",
       "feedback": "La Tassonomia Verde dell'UE è un sistema di classificazione che stabilisce criteri scientifici per determinare se un'attività economica è davvero sostenibile. Aiuta investitori e consumatori a distinguere gli investimenti e i prodotti veramente sostenibili da quelli che si limitano a usare il marketing green. È uno strumento fondamentale della strategia europea contro il greenwashing finanziario.",
@@ -147,8 +143,7 @@
       "risposte": [
         "A. Il packaging è riciclabile?",
         "B. L'azienda ha un CEO che parla di sostenibilità?",
-        "C. Questa affermazione è verificata da un ente terzo indipendente? Quali dati la supportano?",
-        "D. Il prodotto è venduto online o in negozio fisico?"
+        "C. Questa affermazione è verificata da un ente terzo indipendente? Quali dati la supportano?"
       ],
       "risposta_corretta": "C",
       "feedback": "La domanda chiave è sempre: chi verifica questa affermazione e con quali dati? Le certificazioni di terze parti indipendenti, i report di sostenibilità auditati e i dati trasparenti sono gli strumenti per distinguere il greenwashing dalla sostenibilità reale. Il packaging riciclabile è solo un piccolo aspetto, mentre le dichiarazioni del CEO senza supporto dati non hanno valore oggettivo.",
